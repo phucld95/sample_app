@@ -1,5 +1,12 @@
 <% provide(:title, @user.name) %>
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
+<% if logged_in? %>
+  <%= render 'layouts/header_user' %>
+    <br>
+  <h1>
+    <%= gravatar_for @user %>
+    <%= @user.name %>
+  </h1>
+<% else %>
+  <%= render 'layouts/header' %>
+  <li><%= link_to "Log in", login_path %></li>
+<% end %>

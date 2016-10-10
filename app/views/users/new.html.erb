@@ -1,10 +1,15 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<%= render 'layouts/header' %>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for( @user) do |f| %>
-      <%= render 'shared/error_messages' %>
+
+  <div class="row">
+    <div class="col-sm-1">
+    </div>
+
+    <div class="col-sm-6 col-centered">
+      <h1>Sign up</h1>
+      <%= form_for( @user) do |f| %>
+      <%= render 'shared/error_sign_up' %>
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
@@ -19,6 +24,12 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
       <br>
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+
+
+
+
+
+
