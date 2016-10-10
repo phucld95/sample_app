@@ -8,7 +8,37 @@
 </head>
 <body>
 
-<%= yield %>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="nav navbar-nav">
+      <a class="nav-item nav-link active" href="<%= root_path%>">Home</a>
+      <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link" href="#">About</a>
+    </div>
+  </nav>
+
+  <div class="card">
+
+    <div class="row">
+
+      <div class="col-sm-3">
+      </div>
+
+      <div class="col-sm-6 col-centered">
+          <div>
+            <% flash.each do |message_type, message| %>
+              <div class="alert alert-<%= message_type %>"><%= message %></div>
+            <% end %>
+            <%= yield %>
+          </div>
+      </div>
+
+      <div class="col-sm-5">
+      </div>
+
+    </div>
+  </div>
+
 
 </body>
 </html>
